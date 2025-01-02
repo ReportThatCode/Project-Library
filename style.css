@@ -119,6 +119,7 @@ body {
     width: 80%;
     margin-left: 20px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 .row-form .div-input-number button {
     width: calc(35% - 4px);
@@ -128,7 +129,7 @@ body {
     border-radius: 2px;
     font-size: 1rem;
     font-weight: 700;
-    background-color: #FFF6E3;
+    background-color: white;
     color: black;
 }
 .row-form .div-input-number input {
@@ -137,16 +138,51 @@ body {
     height: 40px;
     width: calc(30% - 4px);
     text-align: center;
-    -webkit-appearance: none;
+    font-weight: 700;
 }
 #pages::-webkit-inner-spin-button, 
 #pages::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  
 }
 
+.row-form input[type="radio"] {
+    display: none;
+}
+.div-input-checkbox {
+    width: 80%;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px black;
+    flex-wrap: nowrap;
+    background-color: white;
+}
 
+.div-input-checkbox label {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+.div-input-checkbox label:first-child{
+    background-color: black;
+    color: white;
+}
 
+#btn-submit {
+    margin-left: 20px;
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 20px;
+    border: solid 2px black;
+    font-size: 1rem;
+    font-weight: 700;
+}
 .main .container-recommended {
     grid-column: 3/4;
 }
