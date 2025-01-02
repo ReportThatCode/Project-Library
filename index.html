@@ -5,9 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Library</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <main class="main">
+        <header>
+            <h1>HISTORY BOOKS</h1>
+            <button>Save Cloud</button>
+        </header>
+        <aside>
+            <div class="header-text">
+                <h2>ADD BOOK</h2>
+                <span>+</span>
+            </div>
+            <form>
+                <input type="text" placeholder="Title">
+                <input type="text" placeholder="Author">
+                <div class="row-form">
+                    <label for="pages">Pages</label>
+                    <div class="div-input-number">
+                        <button>-</button>
+                        <input type="number" id="pages" value="1">
+                        <button>+</button>
+                    </div>
+                <div class="row-form">
+                    <div class="div-input-checkbox">
+                    <label for="noRead">NOT READ</label>
+                    <label for="Read">READ</label>
+                    </div>
+                    <input type="radio" name="isRead" id="noRead" value="noRead">
+                    <input type="radio" name="isRead" id="Read" value="Read">
+                </div>
+                </div>
+                <button>SUBMIT</button>
+            </form>
+        </aside>
+        <div class="container-tables">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>NAME</th>
+                        <th>AUTHOR</th>
+                        <th>PAGES</th>
+                        <th>READ</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                    <tr>
+                        <td>Harry Potter</td>
+                        <td>J.K. Rowling</td>
+                        <td>300</td>
+                        <td>YES</td>
+                        <td><button>EDIT</button></td>
+                        <td><button>DELETE</button></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+
+        <div class="container-recommended">
+        <h3>More books that might interest you</h3>
+        <select name="generos" id="generos">
+            <option value="Fantasy">Fantasy</option>
+            <option value="self-help">Self-help</option>
+            <option value="stories">stories</option>
+            <option value="Science fiction">Science fiction</option>
+            <option value="Novels">Novels</option>
+        </select>
+        <table class="Recommended-books">
+           <tbody>
+                <tr>
+                    <th>NAME/AUTHOR</th>
+                    <th>PAGES</th>
+                </tr>
+
+                <tr>
+                    <td class="recommend-title">caperusita</td>
+                    <td class="recommend-pages" rowspan="2">50</td>
+                </tr>
+                <tr>
+                    <td class="recommend-author">brad pitt</td>
+                </tr>
+
+                
+               <!--
+                <tr>
+                    <td>harry potter</td>
+                    <td>pity alvarez</td>
+                    <td>666</td>
+                </tr>
+                <tr>
+                    <td>falopa</td>
+                    <td>con porro</td>
+                    <td>420</td>
+                </tr>
+            -->
+           </tbody>
+        </table>
+        </div>
+    </main> 
+
+
+    <template class="table-row-recommended">
+        <tr>
+            <td class="recommend-title">caperusita</td>
+            <td class="recommend-pages" rowspan="2">50</td>
+        </tr>
+        <tr>
+            <td class="recommend-author">brad pitt</td>
+        </tr>
+    </template>
+
+
+    <template id="table-row">
+        <tr>
+            <td class="name">Harry Potter</td>
+            <td class="author">J.K. Rowling</td>
+            <td class="pages">300</td>
+            <td class="isRead">YES</td>
+            <td><button class="edit">EDIT</button></td>
+            <td><button class="delete">DELETE</button></td>
+        </tr>
+    </template>
+
     <script src="script.js"></script>
 </body>
 </html>
