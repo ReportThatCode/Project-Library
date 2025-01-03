@@ -17,3 +17,11 @@ console.log(caperusita)
 function addBookToLibrary() {
   // do stuff here
 }
+
+
+
+
+function generarIdUnico() {
+  const id = Date.now() - Math.floor(Math.random() * 1000000)
+  return id.toString().slice(-5);
+}

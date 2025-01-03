@@ -11,7 +11,7 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: 400px 1fr 300px;
+    grid-template-columns: 400px 1fr 400px;
     grid-template-rows: 100px 1fr; 
     height: 100vh;
 }
@@ -31,6 +31,7 @@ body {
     margin-left: 20px;
     font-size: 3rem;
     font-weight: 900;
+    text-shadow: 5px 3px 0px rgba(0, 0, 0, 0.4);;
 }
 
 .main header button {
@@ -43,9 +44,14 @@ body {
     border: solid 3px black;
     margin-right: 20px;
     cursor: pointer;
-
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.947);
+    transition: all 0.3s ease;
+    transform: translateY(-5px)
 }
-
+.main header button:hover {
+    box-shadow: none;
+    transform: translateY(0px);
+}
 .main aside {
     grid-column: 1/2;
     grid-row: 2/3;
@@ -77,15 +83,21 @@ body {
 }
 
 .main aside form {
-    background-color: #FEC5FF;
+    background-color: #FECCCB;
     border: solid 3px black;
     width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     box-shadow: 8px 8px 0px rgb(36, 36, 36);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
+.main aside form:hover {
+    box-shadow: 2px 2px 0px rgb(36, 36, 36);
+    transform: translateY(0px);
+}
 .main aside form input {
     width: 80%;
     margin-top: 20px;
@@ -158,6 +170,7 @@ body {
     border: solid 2px black;
     flex-wrap: nowrap;
     background-color: white;
+    
 }
 
 .div-input-checkbox label {
@@ -168,6 +181,7 @@ body {
     padding: 0.5rem;
     cursor: pointer;
     font-weight: 700;
+    
 }
 .div-input-checkbox label:first-child{
     background-color: black;
@@ -182,19 +196,139 @@ body {
     border: solid 2px black;
     font-size: 1rem;
     font-weight: 700;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.947);
+    transition: all 0.3s ease;
+    transform: translateY(-5px)
+}
+
+#btn-submit:hover {
+box-shadow: none;
+transform: translateY(0px);
 }
 .main .container-recommended {
     grid-column: 3/4;
 }
 
 
-
-
-
-
-td {
-    border: solid 1px black;
+.container-tables { 
+    margin: 0 auto;
 }
-tr {
-    border: solid 1px red;
+
+.container-tables table {
+    margin-top: 70px;
+    border: solid 5px black;
+    background-color: #D2E8FF;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.847);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.container-tables table:hover {
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.847);
+    transform: translateY(0px);
+}
+
+.container-tables table tbody {
+    display: inline-block;
+    margin: 1rem;
+    
+}
+
+
+#table-books th{
+    background-color:white;
+    border: solid 2px black;
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.847);
+}
+#table-books td:first-child {
+    max-width: 300px;
+    text-wrap: wrap;
+    overflow: hidden;
+    height: auto;
+}
+
+#table-books td {
+    border: none;
+    padding: 0.9rem 1.5rem;
+    text-align: start;
+    font-weight: 700;
+}
+
+#table-books .edit , #table-books .delete {
+    border-radius: 2px;
+    cursor: pointer;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#table-books td:nth-last-of-type(1),#table-books td:nth-last-of-type(2),#table-books td:nth-last-of-type(3),#table-books td:nth-last-of-type(4){
+    text-align: center;
+    padding: 0;
+}
+.container-recommended {
+    display: flex;
+    flex-direction: column;
+    align-items: start
+}
+.container-recommended h3 {
+    margin-top: 10px;
+}
+
+.container-recommended select {
+    cursor: pointer;
+    width: 80%;
+    margin: 5px 0 20px 0;
+    padding: 10px;
+    border: solid 3px black;
+    color: black;
+    font-weight: 900;
+    font-size: 0.8rem;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.847);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.container-recommended select:focus {
+    border: solid 3px black;
+    outline: none;
+}
+
+.container-recommended select:hover {
+    box-shadow: none;
+    transform: translateY(0px);
+}
+.container-recommended table {
+    max-width: 80%;
+    width: 80%;
+}
+
+.container-recommended table th {
+    padding: 0.6rem 1rem;
+    border: solid 3px black;
+    background-color: black;
+    color: white;
+}
+
+.container-recommended table td {
+    border: solid 3px black;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.recommend-title{
+    background-color: #C7A8F6;
+}
+.recommend-author , .recommend-pages {
+background-color: white;
+}
+
+.row-table {
+    margin-top: 50px;
 }
