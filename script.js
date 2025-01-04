@@ -126,6 +126,7 @@ document.querySelector("form").addEventListener("submit",(e)=>{
     myLibrary[index].isRead = document.querySelector('input[name="isRead"]:checked').value;
     actualizarTabla();
     document.querySelector("form").reset();
+    removeActive();
     document.querySelector("#noRead").previousElementSibling.classList.add("active")
     document.querySelector("#noRead").checked = true
     document.getElementById("btn-submit").dataset.id = 0;
