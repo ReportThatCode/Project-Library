@@ -22,22 +22,23 @@
                 <span>+</span>
             </div>
             <form>
-                <input type="text" placeholder="Title">
-                <input type="text" placeholder="Author">
+                <input id="title" type="text" placeholder="Title">
+                <input id="author" type="text" placeholder="Author">
                 <div class="row-form">
                     <label for="pages">Pages</label>
                     <div class="div-input-number">
-                        <button>-</button>
+                        <button class="menos">-</button>
                         <input type="number" id="pages" value="1">
-                        <button>+</button>
+                        <button class="mas">+</button>
                     </div>
                 <div class="row-form">
                     <div class="div-input-checkbox">
-                    <label for="noRead">NOT READ</label>
+                    <label class="active" for="noRead">NOT READ</label>
+                    <input type="radio" name="isRead" id="noRead" value="NOT READ" checked>
                     <label for="Read">READ</label>
-                    </div>
-                    <input type="radio" name="isRead" id="noRead" value="noRead">
-                    <input type="radio" name="isRead" id="Read" value="Read">
+                    <input type="radio" name="isRead" id="Read" value="READ">    
+                </div>
+                    
                 </div>
                 </div>
                 <button id="btn-submit">SUBMIT</button>
@@ -45,63 +46,16 @@
         </aside>
         <div class="container-tables">
             <table id="table-books">
-                <tbody>
-                    <tr>
-                        <th>NAME</th>
-                        <th>AUTHOR</th>
-                        <th>PAGES</th>
-                        <th>READ</th>
-                        <th>EDIT</th>
-                        <th>DELETE</th>
-                    </tr>
-                    <tr>
-                        <td class="name">Harry Potter</td>
-                        <td class="author">J.K. Rowling</td>
-                        <td class="pages">300</td>
-                        <td class="isRead">YES</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
-                    <tr>
-                        <td class="name">Porongol apfdoasfpdm   f dsafaf</td>
-                        <td class="author">falopa</td>
-                        <td class="pages">420</td>
-                        <td class="isRead">NO</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
-                    <tr>
-                        <td class="name">Un cuento</td>
-                        <td class="author">de turros</td>
-                        <td class="pages">6</td>
-                        <td class="isRead">YES</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
-                    <tr>
-                        <td class="name">Harry Potter</td>
-                        <td class="author">J.K. Rowling</td>
-                        <td class="pages">300</td>
-                        <td class="isRead">YES</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
-                    <tr>
-                        <td class="name">Porongol apfdoasfpdm   f dsafaf</td>
-                        <td class="author">falopa</td>
-                        <td class="pages">420</td>
-                        <td class="isRead">NO</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
-                    <tr>
-                        <td class="name">Un cuento</td>
-                        <td class="author">de turros</td>
-                        <td class="pages">6</td>
-                        <td class="isRead">YES</td>
-                        <td><img src="cog.svg" alt="edit" class="edit"></td>
-                        <td><img src="delete.svg" alt="dele" class="delete"></td>
-                    </tr>
+                
+                <thead><tr>
+                    <th>NAME</th>
+                    <th>AUTHOR</th>
+                    <th>PAGES</th>
+                    <th>READ</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr></thead>
+                <tbody class="tbody-books">
                     <tr>
                         <td class="name">Harry Potter</td>
                         <td class="author">J.K. Rowling</td>
@@ -142,11 +96,13 @@
         </select>
         <table class="Recommended-books">
            <tbody>
-                <tr>
-                    <th>NAME/AUTHOR</th>
-                    <th>PAGES</th>
-                </tr>
-                
+                <thead>
+                    <tr>
+                        <th>NAME/AUTHOR</th>
+                        <th>PAGES</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td class="recommend-title">caperusita </td>
                     <td class="recommend-pages" rowspan="2">50</td>
@@ -173,6 +129,7 @@
                 <tr>
                     <td class="recommend-author">steve</td>
                 </tr>
+            </tbody>
                <!--
                 <tr>
                     <td>harry potter</td>
@@ -204,12 +161,12 @@
 
     <template id="table-row">
         <tr>
-            <td class="name">Harry Potter</td>
+            <td class="title">Harry Potter</td>
             <td class="author">J.K. Rowling</td>
             <td class="pages">300</td>
             <td class="isRead">YES</td>
-            <td><button class="edit">EDIT</button></td>
-            <td><button class="delete">DELETE</button></td>
+            <td><img src="cog.svg" alt="edit" class="edit"></td>
+            <td><img src="delete.svg" alt="dele" class="delete"></td>
         </tr>
     </template>
 

@@ -105,6 +105,7 @@ body {
     border: solid 2px black;
     border-radius: 2px;
     margin-left: 20px;
+    font-weight: 700;
 }
 
 .main aside form input:focus {
@@ -158,7 +159,12 @@ body {
 }
 
 .row-form input[type="radio"] {
-    display: none;
+display: none;
+}
+
+.active {
+    background-color:black;
+    color: white;
 }
 .div-input-checkbox {
     width: 80%;
@@ -181,11 +187,6 @@ body {
     padding: 0.5rem;
     cursor: pointer;
     font-weight: 700;
-    
-}
-.div-input-checkbox label:first-child{
-    background-color: black;
-    color: white;
 }
 
 #btn-submit {
@@ -222,6 +223,9 @@ transform: translateY(0px);
     box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.847);
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    padding: 1.5rem;
+    width: 800px;
+    min-width: 90%;
 }
 
 .container-tables table:hover {
@@ -230,7 +234,6 @@ transform: translateY(0px);
 }
 
 .container-tables table tbody {
-    display: inline-block;
     margin: 1rem;
     
 }
@@ -332,3 +335,4 @@ background-color: white;
 .row-table {
     margin-top: 50px;
 }
+
