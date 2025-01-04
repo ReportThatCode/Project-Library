@@ -5,6 +5,40 @@ const inputNoRead = document.getElementById("noRead");
 
 const templateTable = document.getElementById("table-row").content;
 
+const booksRecommend = {
+  fantasy: [
+    { name: "The Name of the Wind", author: "Patrick Rothfuss", pages: 872 },
+    { name: "The Fellowship of the Ring", author: "J.R.R. Tolkien", pages: 576 },
+    { name: "A Game of Thrones", author: "George R.R. Martin", pages: 694 },
+    { name: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", pages: 256 },
+  ],
+  selfHelp: [
+    { name: "How to Make Good Things Happen", author: "Marian Rojas Estapé", pages: 232 },
+    { name: "Secrets of the Millionaire Mind", author: "T. Harv Eker", pages: 176 },
+    { name: "The Monk Who Sold His Ferrari", author: "Robin Sharma", pages: 208 },
+    { name: "Atomic Habits", author: "James Clear", pages: 320 },
+    { name: "Unf*ck Your Boundaries", author: "Dr. Faith G. Harper", pages: 666 }
+  ],
+  stories: [
+    { name: "One Hundred Years of Solitude", author: "Gabriel García Márquez", pages: 496 },
+    { name: "The Shadow of the Wind", author: "Carlos Ruiz Zafón", pages: 576 },
+    { name: "Love in the Time of Cholera", author: "Gabriel García Márquez", pages: 368 },
+    { name: "The House of the Spirits", author: "Isabel Allende", pages: 448 },
+  ],
+  scienceFiction: [
+    { name: "Foundation", author: "Isaac Asimov", pages: 256 },
+    { name: "1984", author: "George Orwell", pages: 328 },
+    { name: "Brave New World", author: "Aldous Huxley", pages: 256 },
+    { name: "Neuromancer", author: "William Gibson", pages: 320 },
+    { name: "The End of Eternity", author: "Isaac Asimov", pages: 666 }
+  ],
+  novels: [
+    { name: "Don Quixote", author: "Miguel de Cervantes", pages: 1072 },
+    { name: "Pride and Prejudice", author: "Jane Austen", pages: 416 },
+    { name: "Crime and Punishment", author: "Fyodor Dostoevsky", pages: 671 },
+    { name: "Wuthering Heights", author: "Emily Brontë", pages: 416 },
+  ]
+};
 
 
 let myLibrary = [];
@@ -66,6 +100,19 @@ function removeActive(){
   })
 }
 
+function showBooks(genero = "fantasy"){
+  const templateRow = document.querySelector(".table-row-recommended").content;
+  document.querySelector(".tbody-recommended").innerHTML = ""
+  booksRecommend[genero].forEach((book) => {
+
+    const clone = templateRow.cloneNode(true);
+    clone.querySelector(".recommend-title").textContent = book.name;
+    clone.querySelector(".recommend-author").textContent = book.author;
+    clone.querySelector(".recommend-pages").textContent = book.pages;
+    document.querySelector(".tbody-recommended").appendChild(clone)
+  })
+}
+showBooks();
 
 document.querySelector("form").addEventListener("submit",(e)=>{
   e.preventDefault();
@@ -99,9 +146,10 @@ document.querySelector("form").addEventListener("submit",(e)=>{
   }
 
 })
-document.addEventListener("click",(e)=>{
 
- 
+
+
+document.addEventListener("click",(e)=>{
 
   if(e.target.matches(".delete")){
     const id = e.target.dataset.id;
@@ -147,6 +195,9 @@ document.addEventListener("click",(e)=>{
 
 document.addEventListener("input",(e)=>{
 
+  if(e.target.matches("#generos")){
+    showBooks(document.querySelector("#generos").value)
+  }
 
   if(inputNoRead.checked){
     removeActive()
